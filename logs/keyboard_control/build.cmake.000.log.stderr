@@ -1,0 +1,15 @@
+[31m[1mCMake Error[0m at /opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:83 (find_package):
+  Could not find a package configuration file provided by "airsim_ros_pkgs"
+  with any of the following names:
+
+    airsim_ros_pkgsConfig.cmake
+    airsim_ros_pkgs-config.cmake
+
+  Add the installation prefix of "airsim_ros_pkgs" to CMAKE_PREFIX_PATH or
+  set "airsim_ros_pkgs_DIR" to a directory containing one of the above files.
+  If "airsim_ros_pkgs" provides a separate development package or SDK, be
+  sure it has been installed.
+[36mCall Stack (most recent call first):[0m
+  CMakeLists.txt:10 (find_package)
+
+

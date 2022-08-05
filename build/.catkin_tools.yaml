@@ -1,0 +1,6 @@
+devel_space: /home/jakeluo/Documents/RM_published_outside_repos/IntelligentUAVChampionshipBase-main/devel
+install: false
+install_space: /home/jakeluo/Documents/RM_published_outside_repos/IntelligentUAVChampionshipBase-main/install
+profile: default
+source_space: /home/jakeluo/Documents/RM_published_outside_repos/IntelligentUAVChampionshipBase-main/src
+workspace: /home/jakeluo/Documents/RM_published_outside_repos/IntelligentUAVChampionshipBase-main
