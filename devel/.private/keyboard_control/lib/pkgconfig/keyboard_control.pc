@@ -1,8 +1,0 @@
-prefix=/home/jakeluo/Documents/RM_published_outside_repos/IntelligentUAVChampionshipBase-main/devel/.private/keyboard_control
-
-Name: keyboard_control
-Description: Description of keyboard_control
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: message_runtime roscpp std_msgs
