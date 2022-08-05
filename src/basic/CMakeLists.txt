@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(keyboard_control)
+project(basic)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -125,5 +125,5 @@ catkin_package(
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(keyboard_control src/keyboard_control.cpp)
-target_link_libraries(keyboard_control ${catkin_LIBRARIES})
+add_executable(basic src/basic.cpp)
+target_link_libraries(basic ${catkin_LIBRARIES})

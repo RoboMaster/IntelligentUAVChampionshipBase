@@ -28,7 +28,7 @@
 
 3. ## 开发环境基础镜像案例的使用
     >进入文件目录  
-    `cd \path\to\student_basic_dev`
+    `cd \path\to\IntelligentUAVChampionshipBase`
     ----
     >下载并导入镜像  
     >+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/student_image/student_basic_dev_0729.tar`  

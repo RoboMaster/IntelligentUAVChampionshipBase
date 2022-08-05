@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>keyboard_control</name>
+  <name>basic</name>
   <version>0.0.0</version>
   <description>The keyboard_control package</description>
 
