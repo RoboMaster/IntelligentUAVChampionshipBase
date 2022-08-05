@@ -28,7 +28,7 @@
 
 3. ## 开发环境基础镜像案例的使用
     >进入文件目录  
-    `cd \path\to\IntelligentUAVChampionshipBase`
+    `cd /pat/to/IntelligentUAVChampionshipBase`
     ----
     >下载并导入镜像  
     >+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/student_image/student_basic_dev_0729.tar`  
@@ -50,8 +50,8 @@
 
 4. ## 基于docker镜像的控制程序开发流程
     本次比赛中的模拟器使用 ***ROS*** 进行通讯，选手需要编写含有控制程序的ros功能包操控无人机完成目标。该ros功能包需要封装在docker镜像中进行提交，流程如下
-    >下载 ***student_basic_dev*** 文件,并进入该文件目录  
-    `cd /path/to/student_basic_dev`  
+    >进入文件目录  
+    `cd /path/to/IntelligentUAVChampionshipBase`
     ----
     >基于开发案例完成功能设计与程序开发后，编译程序
     >+ `source /opt/ros/noetic/setup.bash`  
@@ -61,13 +61,13 @@
     ----
     > 验证程序
     >+ 参考 ***自主无人机竞速模拟器使用说明*** 配置好模拟器并启动
-    >+ `cd /path/to/student_basic_dev`  
+    >+ `cd /path/to/IntelligentUAVChampionshipBase`
     >+ `source devel/setup.bash`  
     >+ `rosrun basic basic`    
     ----
     >将程序封装入镜像中
     >+ 完成第3步中的镜像导入后，使用如下指令打开一个容器  
-    `docker run -it -v /home/$USER/Documents/student_basic_dev/:/home/tmp   student_basic_dev:0729`  
+    `docker run -it -v /path/to/IntelligentUAVChampionshipBase/:/home/tmp   student_basic_dev:0729`  
     >+ 在容器终端中进入 ***/home*** 目录  
     `cd /home`  
     >+ 将 ***/home/tmp*** 中的文件覆盖 ***/home/student_basic_dev*** 的文件  
