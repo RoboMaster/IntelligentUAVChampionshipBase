@@ -70,8 +70,8 @@
     `docker run -it -v /path/to/IntelligentUAVChampionshipBase/:/home/tmp   student_basic_dev:0729`  
     >+ 在容器终端中进入 ***/home*** 目录  
     `cd /home`  
-    >+ 将 ***/home/tmp*** 中的文件覆盖 ***/home/student_basic_dev*** 的文件  
-    `cp -r ./tmp/* ./student_basic_dev/`  
+    >+ 用 ***/home/tmp*** 中的src文件夹覆盖 ***/home/student_basic_dev*** 的src文件夹  
+    `cp -r ./tmp/src ./student_basic_dev/src`  
     >+ 删除已编译的内容后重新编译  
     `cd student_basic_dev/`  
     `rm -rf devel/ build/ logs/`  
