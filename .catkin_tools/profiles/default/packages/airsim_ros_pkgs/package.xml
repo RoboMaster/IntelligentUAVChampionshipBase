@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>basic</name>
+  <name>airsim_ros_pkgs</name>
   <version>0.0.0</version>
-  <description>The keyboard_control package</description>
+  <description>The airsim_ros_pkgs package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
