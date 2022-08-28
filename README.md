@@ -105,7 +105,7 @@
     ros可交互数据可以在启动模拟器后，通过`rosrun rqt_topic rqt_topic`指令查看，如图所示，具体的数据结构也可以查询
     ![pic](./docs/Screenshot%20from%202022-08-25%2017-27-11.png)
     >用于获取数据的可订阅的主题
-    >+ 下视相机（所有赛项可用）   
+    >+ 下视相机（仅赛项一, 二可用）   
     `/airsim_node/drone_1/bottom_center/Scene` 
     >+ 深度相机的深度数据（与双目二选一）   
     `/airsim_node/drone_1/front_center/DepthPlanar`
