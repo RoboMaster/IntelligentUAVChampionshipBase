@@ -107,13 +107,13 @@
     >用于获取数据的可订阅的主题
     >+ 下视相机（仅赛项一, 二可用）   
     `/airsim_node/drone_1/bottom_center/Scene` 
-    >+ 深度相机的深度数据（与双目二选一）   
+    >+ 深度相机的深度数据（在赛项一，赛项二中，与双目二选一）   
     `/airsim_node/drone_1/front_center/DepthPlanar`
-    >+ 深度相机的rgb图（与双目二选一）   
+    >+ 深度相机的rgb图（在赛项一，赛项二中，与双目二选一; 在赛项三中作为单目相机可用）   
     `/airsim_node/drone_1/front_center/Scene`
-    >+ 双目左rgb图（与RGBD二选一）   
+    >+ 双目左rgb图（在赛项一，赛项二中，与RGBD二选一）   
     `/airsim_node/drone_1/front_left/Scene`
-    >+ 双目右rgb图（与RGBD二选一）    
+    >+ 双目右rgb图（在赛项一，赛项二中，与RGBD二选一）    
     `/airsim_node/drone_1/front_right/Scene`
     >+ imu数据（所有赛项可用）  
     `/airsim_node/drone_1/imu/imu`
