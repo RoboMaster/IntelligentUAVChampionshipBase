@@ -130,8 +130,8 @@
     >+ 角速度推力控制（所有赛项可用）  
     `/airsim_node/drone_1/angle_rate_throttle_frame`
     ----
-    >可用服务
-    >+起飞
-    `/airsim_node/drone_1/takeoff`
-    >+降落
-    `/airsim_node/drone_1/Land`
+    >可用服务   
+    >+起飞   
+    `/airsim_node/drone_1/takeoff`   
+    >+降落   
+    `/airsim_node/drone_1/Land`   
