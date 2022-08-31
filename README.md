@@ -41,7 +41,7 @@
     >+ `docker load < student_basic_dev_0825.tar`
     ----
     >启动docker镜像  
-    `docker run --rm -i -t -e ROS_IP='172.17.0.2' -e ROS_MASTER_URI='http://172.17.0.1:11311' student_basic_dev_0825`
+    `docker run --rm -i -t -e ROS_IP='172.17.0.2' -e ROS_MASTER_URI='http://172.17.0.1:11311' stage1_pdcontrol`
     ----
     >当看到如下图，说明容器启动成功，样例程序启动
     ![pic](./docs/Screenshot%20from%202022-08-25%2017-00-06.png)
@@ -80,7 +80,7 @@
     `catkin build`   
     出现 ***airsim_ros_pkgs*** 缺失的错误只需要重新编译一次即可
     >+ 在容器终端中添加自动启动命令  
-    `sudo apt install vim`
+    `sudo apt install vim`  
     `vim /etc/bash.bashrc `   
     按 i 建进入编辑模式， 在最下面添加程序启动命令，例如：  
     `source /home/student_basic_dev/devel/setup.bash`  
@@ -131,7 +131,7 @@
     `/airsim_node/drone_1/angle_rate_throttle_frame`
     ----
     >可用服务   
-    >+起飞   
+    >+ 起飞   
     `/airsim_node/drone_1/takeoff`   
-    >+降落   
-    `/airsim_node/drone_1/Land`   
+    >+ 降落   
+    `/airsim_node/drone_1/land`   

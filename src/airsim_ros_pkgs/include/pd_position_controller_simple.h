@@ -114,7 +114,8 @@ private:
     bool got_goal_once_;
     // todo check for odom msg being older than n sec
 
-    ros::Publisher airsim_vel_cmd_world_frame_pub_;
+    // ros::Publisher airsim_vel_cmd_world_frame_pub_;
+    ros::Publisher airsim_vel_cmd_body_frame_pub_;
     ros::Subscriber airsim_odom_sub_;
     ros::Subscriber home_geopoint_sub_;
     ros::ServiceServer local_position_goal_srvr_;

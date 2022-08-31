@@ -76,8 +76,8 @@ void PIDPositionController::initialize_ros()
         ROS_INFO_STREAM("Waiting vehicle name");
     }
     // ROS publishers
-    airsim_vel_cmd_world_frame_pub_ = nh_.advertise<airsim_ros_pkgs::VelCmd>("/airsim_node/drone_1/vel_cmd_world_frame", 1);
-
+    // airsim_vel_cmd_world_frame_pub_ = nh_.advertise<airsim_ros_pkgs::VelCmd>("/airsim_node/drone_1/vel_cmd_world_frame", 1);
+    airsim_vel_cmd_body_frame_pub_ = nh_.advertise<airsim_ros_pkgs::VelCmd>("/airsim_node/drone_1/vel_cmd_body_frame", 1);
     // ROS subscribers
     airsim_odom_sub_ = nh_.subscribe("/airsim_node/drone_1/odom_local_ned", 50, &PIDPositionController::airsim_odom_cb, this);
     home_geopoint_sub_ = nh_.subscribe("/airsim_node/home_geo_point", 50, &PIDPositionController::home_geopoint_cb, this);
@@ -258,6 +258,6 @@ void PIDPositionController::enforce_dynamic_constraints()
 
 void PIDPositionController::publish_control_cmd()
 {
-    airsim_vel_cmd_world_frame_pub_.publish(vel_cmd_);
+    airsim_vel_cmd_body_frame_pub_.publish(vel_cmd_);
     ROS_INFO("velcmd: %f %f %f %f", vel_cmd_.twist.linear.x, vel_cmd_.twist.linear.y, vel_cmd_.twist.linear.z, vel_cmd_.twist.angular.z);
 }
