@@ -101,9 +101,11 @@
     `docker image save [镜像：TAG] > test.tar`  
     在主机工作目录下会出现 test.tar 文件，该文件即为可提交镜像
 
-5. ## roa数据交互
-    ros可交互数据可以在启动模拟器后，通过`rosrun rqt_topic rqt_topic`指令查看，如图所示，具体的数据结构也可以查询
-    ![pic](./docs/Screenshot%20from%202022-08-25%2017-27-11.png)
+5. ## ros数据交互
+    ros可交互数据可以在启动模拟器后，通过`rosrun rqt_topic rqt_topic`指令查看，如图所示，具体的数据结构也可以查询  
+    ![pic](./docs/rgbd.png)  
+    ![pic](./docs/stereo.png)  
+    ![pic](./docs/FPV.png)  
     >用于获取数据的可订阅的主题
     >+ 下视相机（仅赛项一, 二可用）   
     `/airsim_node/drone_1/bottom_center/Scene` 
@@ -127,3 +129,9 @@
     `/airsim_node/drone_1/vel_cmd_body_frame`
     >+ 角速度推力控制（所有赛项可用）  
     `/airsim_node/drone_1/angle_rate_throttle_frame`
+    ----
+    >可用服务
+    >+起飞
+    `/airsim_node/drone_1/takeoff`
+    >+降落
+    `/airsim_node/drone_1/Land`
