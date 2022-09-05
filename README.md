@@ -27,7 +27,7 @@
     ---
     >设置用户组，消除 *sudo* 限制  
     >+ `sudo groupadd docker`  
-    >+ `$ sudo gpasswd -a $USER docker`  
+    >+ `sudo gpasswd -a $USER docker`  
     >+ 注销账户并重新登录使新的用户组生效
     >+ sudo service docker restart
 
