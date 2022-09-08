@@ -56,7 +56,7 @@
     >在LINUX端中基于开发案例完成功能设计与程序开发后，编译程序
     >+ `source /opt/ros/noetic/setup.bash`  
     >+ `rm -rf devel build`  
-    >+ `carkin build`  
+    >+ `catkin build`  
     出现 ***airsim_ros_pkgs*** 缺失的错误只需要重新编译一次即可
     ----
     > 在LINUX端验证程序
