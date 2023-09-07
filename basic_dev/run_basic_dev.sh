@@ -1,0 +1,1 @@
+docker run -it --net host --name basic_dev --rm  basic_dev

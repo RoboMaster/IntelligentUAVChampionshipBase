@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="airsim_ros" type="pd_position_controller_simple_node" name="pd_control" output="screen"/>
+    <node pkg="pos_ctrl" type="pos_ctrl" name="pos_ctrl" output="screen"/>
+</launch>

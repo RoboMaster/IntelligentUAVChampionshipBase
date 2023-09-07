@@ -1,6 +1,0 @@
-go
-/home/jakelou/Documents/IntelligentUAVChampionshipBase/devel/.private/go/cmake.lock /home/jakelou/Documents/IntelligentUAVChampionshipBase/devel/./cmake.lock
-/home/jakelou/Documents/IntelligentUAVChampionshipBase/devel/.private/go/lib/pkgconfig/go.pc /home/jakelou/Documents/IntelligentUAVChampionshipBase/devel/lib/pkgconfig/go.pc
-/home/jakelou/Documents/IntelligentUAVChampionshipBase/devel/.private/go/lib/go/go /home/jakelou/Documents/IntelligentUAVChampionshipBase/devel/lib/go/go
-/home/jakelou/Documents/IntelligentUAVChampionshipBase/devel/.private/go/share/go/cmake/goConfig.cmake /home/jakelou/Documents/IntelligentUAVChampionshipBase/devel/share/go/cmake/goConfig.cmake
-/home/jakelou/Documents/IntelligentUAVChampionshipBase/devel/.private/go/share/go/cmake/goConfig-version.cmake /home/jakelou/Documents/IntelligentUAVChampionshipBase/devel/share/go/cmake/goConfig-version.cmake

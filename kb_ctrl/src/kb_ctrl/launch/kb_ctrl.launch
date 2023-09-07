@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="airsim_ros" type="pd_position_controller_simple_node" name="pd_control"/>
+    <node pkg="kb_ctrl" type="kb_ctrl" name="kb_ctrl"/>
+</launch>

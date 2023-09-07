@@ -1,0 +1,12 @@
+<launch>
+    <remap from="/airsim_node/drone_1/imu/imu" to="/imu/data_raw" />
+    <node pkg="imu_complementary_filter" type="imu_complementary_filter" name="imu_complementary_filter" output="screen">
+    <param name="do_bias_estimation" value="true"/>
+    <param name="do_adaptive_gain" value="true"/>
+    <param name="use_mag" value="false"/>
+    <param name="gain_acc" value="0.01"/>
+    <param name="gain_mag" value="0.01"/>
+    <param name="publish_debug_topics" value="false"/>
+    <param name="publish_tf" value="true"/>
+    </node>
+</launch>
