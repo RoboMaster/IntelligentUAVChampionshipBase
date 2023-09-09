@@ -1,5 +1,6 @@
 # release note:
 ## 20230908: 更新README
+## 20230909: FIX：airsim_ros/srv/Reset.srv
 
 # __自主无人机竞速基本开发教程__  
 1. ## 启动模拟器 
