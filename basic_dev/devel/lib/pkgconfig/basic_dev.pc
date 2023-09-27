@@ -1,0 +1,8 @@
+prefix=/home/jakeluo/Documents/IntelligentUAVChampionshipBase/basic_dev/devel
+
+Name: basic_dev
+Description: Description of basic_dev
+Version: 0.0.0
+Cflags: -I/home/jakeluo/Documents/IntelligentUAVChampionshipBase/basic_dev/src/basic_dev/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime roscpp std_msgs

@@ -1,0 +1,8 @@
+prefix=/home/jakeluo/Documents/IntelligentUAVChampionshipBase/basic_dev/install
+
+Name: airsim_ros
+Description: Description of airsim_ros
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime roscpp std_msgs
