@@ -34,7 +34,7 @@ POSCtrl::POSCtrl(ros::NodeHandle *nh)
     posecmd.throttle = 0.596;//油门， （0.0-1.0）
 
     //无人机信息通过如下命令订阅，当收到消息时自动回调对应的函数
-    odom_suber = nh->subscribe<geometry_msgs::Pose>("/airsim_node/drone_1/debug/pose_gt", 1, std::bind(&POSCtrl::odom_local_ned_cb, this, std::placeholders::_1));//状态真值，用于赛道一
+    odom_suber = nh->subscribe<geometry_msgs::PoseStamped>("/airsim_node/drone_1/debug/pose_gt", 1, std::bind(&POSCtrl::odom_local_ned_cb, this, std::placeholders::_1));//状态真值，用于赛道一
     front_View_suber = it->subscribe("airsim_node/drone_1/front_left/Scene", 1, std::bind(&POSCtrl::front_view_cb, this,  std::placeholders::_1));
 
     //通过这两个服务可以调用模拟器中的无人机起飞和降落命令
@@ -74,18 +74,18 @@ POSCtrl::~POSCtrl()
     // cv::destroyAllWindows();
 }
 
-void POSCtrl::odom_local_ned_cb(const geometry_msgs::Pose::ConstPtr& msg)
+void POSCtrl::odom_local_ned_cb(const geometry_msgs::PoseStamped::ConstPtr& msg)
 {
     // ROS_INFO("Get odom_local_ned_cd\n\r  orientation: %f-%f-%f-%f\n\r  position: %f-%f-%f\n\r", 
     // msg->orientation.w, msg->orientation.x, msg->orientation.y, msg->orientation.z, //姿态四元数
     // msg->position.x, msg->position.y,msg->position.z);//位置)
     tf2::Quaternion quat_tf;
     double roll, pitch, yaw;
-    tf2::fromMsg(msg->orientation, quat_tf);
+    tf2::fromMsg(msg->pose.orientation, quat_tf);
     tf2::Matrix3x3(quat_tf).getRPY(roll, pitch, yaw);
-    Pose[0] = msg->position.x;
-    Pose[1] = msg->position.y;
-    Pose[2] = msg->position.z;
+    Pose[0] = msg->pose.position.x;
+    Pose[1] = msg->pose.position.y;
+    Pose[2] = msg->pose.position.z;
     Pose[3] = yaw;
 }
 

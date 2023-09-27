@@ -8,6 +8,7 @@
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 #include <nav_msgs/Odometry.h>
 #include <geometry_msgs/Pose.h>
+#include <geometry_msgs/PoseStamped.h>
 #include <math.h>
 #include <airsim_ros/VelCmd.h>
 #include <airsim_ros/SetLocalPosition.h>
@@ -33,7 +34,7 @@ public:
     double reached_yaw_degrees;
 
     PIDParams()
-        : kp_x(1.5), kp_y(1.5), kp_z(1.5), kp_yaw(2), kd_x(0.8), kd_y(0.8), kd_z(0.8), kd_yaw(0.5), reached_thresh_xyz(1), reached_yaw_degrees(5.0)
+        : kp_x(1.2), kp_y(1.2), kp_z(1.2), kp_yaw(2), kd_x(0.8), kd_y(0.8), kd_z(0.8), kd_yaw(0.5), reached_thresh_xyz(1), reached_yaw_degrees(5.0)
     {
     }
 
@@ -57,7 +58,7 @@ public:
     double max_yaw_rate_degree;
 
     DynamicConstraints()
-        : max_vel_horz_abs(2), max_vel_vert_abs(2), max_yaw_rate_degree(30)
+        : max_vel_horz_abs(1.5), max_vel_vert_abs(1.5), max_yaw_rate_degree(0.1)
     {
     }
 
@@ -76,7 +77,7 @@ public:
     bool gps_goal_srv_override_cb(airsim_ros::SetGPSPosition::Request& request, airsim_ros::SetGPSPosition::Response& response);
 
     // ROS subscriber callbacks
-    void airsim_odom_cb(const geometry_msgs::Pose& odom_msg);
+    void airsim_odom_cb(const geometry_msgs::PoseStamped& odom_msg);
     //void home_geopoint_cb(const airsim_ros::GPSYaw& gps_msg);
 
     void update_control_cmd_timer_cb(const ros::TimerEvent& event);
@@ -108,7 +109,7 @@ private:
 
     double update_control_every_n_sec;
 
-    geometry_msgs::Pose curr_odom_;
+    geometry_msgs::PoseStamped curr_odom_;
     airsim_ros::VelCmd vel_cmd_;
     bool reached_goal_;
     bool has_goal_;

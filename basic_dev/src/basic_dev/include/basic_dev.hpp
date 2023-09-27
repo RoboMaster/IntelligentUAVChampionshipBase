@@ -11,7 +11,7 @@
 #include "airsim_ros/GPSYaw.h"
 #include "airsim_ros/CirclePoses.h"
 #include "nav_msgs/Odometry.h"
-#include "geometry_msgs/Pose.h"
+#include "geometry_msgs/PoseStamped.h"
 #include  "sensor_msgs/Imu.h"
 #include <time.h>
 #include <stdlib.h>
@@ -67,8 +67,8 @@ private:
     ros::Publisher pose_publisher;
     ros::Publisher anglerate_publisher;
 
-    void pose_cb(const geometry_msgs::Pose::ConstPtr& msg);
-    void gps_cb(const geometry_msgs::Pose::ConstPtr& msg);
+    void pose_cb(const geometry_msgs::PoseStamped::ConstPtr& msg);
+    void gps_cb(const geometry_msgs::PoseStamped::ConstPtr& msg);
     void imu_cb(const sensor_msgs::Imu::ConstPtr& msg);
     void circles_cb(const airsim_ros::CirclePoses::ConstPtr& msg);
 

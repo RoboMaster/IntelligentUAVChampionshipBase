@@ -42,8 +42,8 @@ BasicDev::BasicDev(ros::NodeHandle *nh)
     arthrcmd.throttle = 0;//油门， （0.0-1.0）
 
     //无人机信息通过如下命令订阅，当收到消息时自动回调对应的函数
-    odom_suber = nh->subscribe<geometry_msgs::Pose>("/airsim_node/drone_1/debug/pose_gt", 1, std::bind(&BasicDev::pose_cb, this, std::placeholders::_1));//状态真值，用于赛道一
-    gps_suber = nh->subscribe<geometry_msgs::Pose>("/airsim_node/drone_1/pose", 1, std::bind(&BasicDev::gps_cb, this, std::placeholders::_1));//状态真值，用于赛道一
+    odom_suber = nh->subscribe<geometry_msgs::PoseStamped>("/airsim_node/drone_1/debug/pose_gt", 1, std::bind(&BasicDev::pose_cb, this, std::placeholders::_1));//状态真值，用于赛道一
+    gps_suber = nh->subscribe<geometry_msgs::PoseStamped>("/airsim_node/drone_1/pose", 1, std::bind(&BasicDev::gps_cb, this, std::placeholders::_1));//状态真值，用于赛道一
     imu_suber = nh->subscribe<sensor_msgs::Imu>("airsim_node/drone_1/imu/imu", 1, std::bind(&BasicDev::imu_cb, this, std::placeholders::_1));//imu数据
     circles_suber = nh->subscribe<airsim_ros::CirclePoses>("airsim_node/drone_1/circle_poses", 1, std::bind(&BasicDev::circles_cb, this, std::placeholders::_1));//障碍圈数据
     front_left_view_suber = it->subscribe("airsim_node/drone_1/front_left/Scene", 1, std::bind(&BasicDev::front_left_view_cb, this,  std::placeholders::_1));
@@ -70,12 +70,12 @@ BasicDev::~BasicDev()
 {
 }
 
-void BasicDev::pose_cb(const geometry_msgs::Pose::ConstPtr& msg)
+void BasicDev::pose_cb(const geometry_msgs::PoseStamped::ConstPtr& msg)
 {
     ROS_INFO("Get pose data.");
 }
 
-void BasicDev::gps_cb(const geometry_msgs::Pose::ConstPtr& msg)
+void BasicDev::gps_cb(const geometry_msgs::PoseStamped::ConstPtr& msg)
 {
     ROS_INFO("Get gps data.");
 }

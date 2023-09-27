@@ -5,3 +5,5 @@ float64 pose_cmd_hz
 float64 angle_cmd_hz
 float64 imu_hz
 float64 image_hz
+float64 pose_err_hz
+float64 rotor_pwm_hz
