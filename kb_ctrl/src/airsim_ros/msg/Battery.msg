@@ -1,2 +1,2 @@
 std_msgs/Header header
-Circle[] poses
+float64 voltage

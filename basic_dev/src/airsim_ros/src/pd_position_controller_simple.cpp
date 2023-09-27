@@ -58,14 +58,14 @@ void PIDPositionController::initialize_ros()
 // }
 
 
-void PIDPositionController::airsim_odom_cb(const geometry_msgs::Pose& odom_msg)
+void PIDPositionController::airsim_odom_cb(const geometry_msgs::PoseStamped& odom_msg)
 {
     has_odom_ = true;
     curr_odom_ = odom_msg;
-    curr_position_.x = odom_msg.position.x;
-    curr_position_.y = odom_msg.position.y;
-    curr_position_.z = odom_msg.position.z;
-    curr_position_.yaw = utils::get_yaw_from_quat_msg(odom_msg.orientation);
+    curr_position_.x = odom_msg.pose.position.x;
+    curr_position_.y = odom_msg.pose.position.y;
+    curr_position_.z = odom_msg.pose.position.z;
+    curr_position_.yaw = utils::get_yaw_from_quat_msg(odom_msg.pose.orientation);
     // ROS_INFO("%f %f %f %f", odom_msg.orientation.w, odom_msg.orientation.x,odom_msg.orientation.y,odom_msg.orientation.z);
     // ROS_INFO("GET pose %f %f %f %f", odom_msg.position.x, odom_msg.position.y, odom_msg.position.z, curr_position_.yaw);
 }
@@ -219,10 +219,10 @@ void PIDPositionController::enforce_dynamic_constraints()
         vel_cmd_.twist.linear.z = (vel_cmd_.twist.linear.z / std::fabs(vel_cmd_.twist.linear.z)) * constraints_.max_vel_vert_abs;
     }
     // todo yaw limits
-    if (std::fabs(vel_cmd_.twist.linear.z) > constraints_.max_yaw_rate_degree) {
+    if (std::fabs(vel_cmd_.twist.angular.z) > constraints_.max_yaw_rate_degree) {
         // todo just add a sgn funciton in common utils? return double to be safe.
         // template <typename T> double sgn(T val) { return (T(0) < val) - (val < T(0)); }
-        vel_cmd_.twist.linear.z = (vel_cmd_.twist.linear.z / std::fabs(vel_cmd_.twist.linear.z)) * constraints_.max_yaw_rate_degree;
+        vel_cmd_.twist.angular.z = (vel_cmd_.twist.angular.z / std::fabs(vel_cmd_.twist.angular.z)) * constraints_.max_yaw_rate_degree;
     }
 }
 

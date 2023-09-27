@@ -10,7 +10,7 @@
 #include "airsim_ros/Land.h"
 #include "airsim_ros/GPSYaw.h"
 #include "nav_msgs/Odometry.h"
-#include "geometry_msgs/Pose.h"
+#include "geometry_msgs/PoseStamped.h"
 #include  "sensor_msgs/Imu.h"
 #include <time.h>
 #include <stdlib.h>
@@ -82,7 +82,7 @@ private:
     ros::Publisher vel_publisher;
     ros::Publisher pose_publisher;
 
-    void odom_local_ned_cb(const geometry_msgs::Pose::ConstPtr& msg);
+    void odom_local_ned_cb(const geometry_msgs::PoseStamped::ConstPtr& msg);
 
     void setPosition_cb(const ros::TimerEvent&);
 
