@@ -99,7 +99,6 @@ int main(int argc, char* argv[])
     udp_rec_buf_ptr = new char[DATASIZEPERSIZE];
     int idx = 0;
 
-
     while(1)
     {
         ret = recvfrom(socket_handler, udp_rec_buf_ptr+receive_bytes_count, UDPPACKETSIZE, 0, 0, 0);
@@ -140,6 +139,12 @@ int main(int argc, char* argv[])
     f.close();
 
     delete[] udp_rec_buf_ptr;
+
+    while(1)
+    {
+        std::cout<<"Decoder died!"<<std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(10));
+    }
 
     return 0;   
 }

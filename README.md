@@ -1,5 +1,6 @@
 # release note:
 ## 20230926：GNSS模拟器基础开发案例
+## 20231127：添加镜像提交说明
 
 
 # __自主无人机竞速基本开发教程__  
@@ -64,3 +65,19 @@
 
     ### 注意：
     每一个数据包发送过来后，无论解码成功与否都应该返回5个数据回模拟器中，可用默认值填充返回，否则模拟器会填充最大误差值进入缺失位。  
+
+5. ## 提交说明
+    >进入文件目录    
+    `cd /path/to/IntelligentUAVChampionshipBase/`  
+    >根据比赛要求完成算法程序  
+    >构建镜像   
+    `docker build -t gnssdecoder .`  
+    >导出镜像  
+    `docekr save gnssdecoder  > gnssdecoder.tar`  
+    >gnssdecoder.tar 即为 可提交文件  
+
+    ### 注意：
+    >为方便调试，案例程序中给定的 UDPSERVERIP 与 UDPCLIENTIP 均为 127.0.0.1。赛事服务器这里分配给模拟器端的IP为 192.168.52.2，选手端IP为 192.168.52.3。再提交程序时，需要将这两个IP地址做相应改动。  
+    ![pic](./docs/9.png)     
+    ![pic](./docs/10.png)   
+    >镜像不应主动退出，否则会导致服务器误判该镜像异常。  
