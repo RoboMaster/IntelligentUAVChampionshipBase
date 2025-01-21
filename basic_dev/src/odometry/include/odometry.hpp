@@ -23,7 +23,6 @@
 #include <pcl/point_types.h>
 // #include "map_manager/map_manager.hpp"
 #include <random>
-#include "backend/backend.hpp"
 #include <mutex>
 #include <pcl_conversions/pcl_conversions.h>
 #include <pcl/point_cloud.h>
