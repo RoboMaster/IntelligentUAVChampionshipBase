@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="odometry" type="odometry" name="odometry" output="screen"/>
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find odometry)/launch/config.rviz" required="true" /> -->
+</launch>

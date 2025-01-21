@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="imu_gps_odometry" type="imu_gps_odometry" name="imu_gps_odometry"/>
+    <node pkg="controller_test" type="controller_test" name="controller_test" output="screen"/>
+</launch>
