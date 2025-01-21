@@ -81,6 +81,8 @@ add_service_files(
   LandGroup.srv
   Reset.srv
   SetLocalPosition.srv
+  DebugSphere.srv
+  TriggerPort.srv
 )
 
 generate_messages(

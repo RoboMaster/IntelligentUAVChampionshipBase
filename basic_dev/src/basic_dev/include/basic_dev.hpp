@@ -22,7 +22,6 @@
 #include <boost/thread/thread.hpp>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 #include <pcl_conversions/pcl_conversions.h>
-#include "airsim_ros/RotorPWM.h"
 #endif
 
 class BasicDev
@@ -42,7 +41,6 @@ private:
 
     // 使用publisher发布速度指令需要定义 Velcmd , 并赋予相应的值后，将他publish（）出去
     airsim_ros::VelCmd velcmd;
-    airsim_ros::RotorPWM pwm_cmd;
 
     //无人机信息通过如下命令订阅，当收到消息时自动回调对应的函数
     ros::Subscriber odom_suber;//状态真值
@@ -57,9 +55,8 @@ private:
     ros::ServiceClient land_client;
     ros::ServiceClient reset_client;
 
-    //通过publisher实现对无人机的控制
+    //通过publisher实现对无人机的速度控制
     ros::Publisher vel_publisher;
-    ros::Publisher pwm_publisher;
 
     void pose_cb(const geometry_msgs::PoseStamped::ConstPtr& msg);
     void gps_cb(const geometry_msgs::PoseStamped::ConstPtr& msg);

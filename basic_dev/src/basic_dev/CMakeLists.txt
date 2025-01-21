@@ -7,7 +7,7 @@ project(basic_dev)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-set(OpenCV_DIR /usr/lib/x86_64-linux-gnu/cmake/opencv4/)
+set(OpenCV_DIR /usr/local/lib/cmake/opencv4)
 set(pcl_conversions_DIR /usr/local/share/pcl_conversions/cmake)
 set(pcl_ros_DIR /usr/local/share/pcl_ros/cmake)
 find_package(catkin REQUIRED COMPONENTS
