@@ -4,7 +4,6 @@
 #include "airsim_ros/VelCmd.h"
 #include "airsim_ros/PoseCmd.h"
 #include "airsim_ros/Takeoff.h"
-#include "airsim_ros/TriggerPort.h"
 #include "airsim_ros/Takeoff.h"
 #include "airsim_ros/RotorPWM.h"
 #include "nav_msgs/Odometry.h"
@@ -18,7 +17,6 @@
 #include <fstream>
 
 
-ros::ServiceClient  g_triggerport_client;
 ros::ServiceClient g_takeoff_client;
 std::vector<std::vector<Eigen::Vector3d>> globalPaths;
 std::vector<Eigen::Vector3d> globalPath;

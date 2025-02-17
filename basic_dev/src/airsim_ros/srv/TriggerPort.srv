@@ -1,3 +1,4 @@
+# 该接口仅供测试，正式比赛请勿使用
 int64 port
 bool enter
 string uselessbelow

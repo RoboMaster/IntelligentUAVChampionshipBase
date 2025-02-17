@@ -5,7 +5,6 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "controller_test"); // 初始化ros 节点，命名为 basic
     ros::NodeHandle n; // 创建node控制句柄
     //无人机信息通过如下命令订阅，当收到消息时自动回调对应的函数
-    g_triggerport_client = n.serviceClient<airsim_ros::TriggerPort>("/airsim_node/drone_1/trigger_port");
     g_takeoff_client = n.serviceClient<airsim_ros::Takeoff>("/airsim_node/drone_1/takeoff");
     g_pwm_publisher = n.advertise<airsim_ros::RotorPWM>("/airsim_node/drone_1/rotor_pwm_cmd", 1);
     ros::Subscriber odom_suber = n.subscribe<nav_msgs::Odometry>("/eskf_odom", 1, odom_cb);
@@ -22,16 +21,6 @@ int main(int argc, char** argv)
         loop_rate.sleep();
     }
     return 0;
-}
-
-void timeCB(const ros::TimerEvent& event)
-{
-    if(cb_cnt / 100 < 11)return;
-    airsim_ros::TriggerPort cmd;
-    cmd.request.port = trigger_port;
-    cmd.request.enter = 1;
-    g_triggerport_client.call(cmd);
-    trigger_port += 1;
 }
 
 void init_pose_cb(const geometry_msgs::PoseStamped::ConstPtr& msg)
