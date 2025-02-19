@@ -1,4 +1,5 @@
-# __自主无人机竞速基本开发教程__  
+# __自主无人机竞速基本开发教程(初赛)__
+>复赛内容已添加至分支 -RMUA2025-02
 ## 1. 启动模拟器 
 参考 ***https://github.com/RoboMaster/IntelligentUAVChampionshipSimulator*** 配置好模拟器并启动
 

@@ -11,7 +11,6 @@ int main(int argc, char** argv)
     // ros::Subscriber gt_suber = n.subscribe<geometry_msgs::PoseStamped>("/airsim_node/drone_1/debug/pose_gt", 1, gt_cb);
     ros::Subscriber init_pose_suber = n.subscribe<geometry_msgs::PoseStamped>("/airsim_node/initial_pose", 1, init_pose_cb);
     ros::Subscriber end_pose_suber = n.subscribe<geometry_msgs::PoseStamped>("/airsim_node/end_goal", 1, end_position_cb);
-    ros::Timer timer = n.createTimer(ros::Duration(1.0), timeCB);
     airsim_ros::Takeoff  tf_cmd;
     tf_cmd.request.waitOnLastTask = 1;
     // g_takeoff_client.call(tf_cmd);
