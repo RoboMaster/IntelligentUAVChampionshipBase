@@ -6,6 +6,7 @@
 #include "airsim_ros/Takeoff.h"
 #include "airsim_ros/Takeoff.h"
 #include "airsim_ros/RotorPWM.h"
+#include "airsim_ros/MeterReport.h"
 #include "nav_msgs/Odometry.h"
 #include "sensor_msgs/Imu.h"
 #include <geometry_msgs/PoseStamped.h>
@@ -29,7 +30,6 @@ Eigen::Matrix4d Tw0, Twb_last;
 Eigen::Vector3d Pwend;
 int next_goal_index;
 bool get_init_pose, get_end_goal;
-int trigger_port = 1;
 int cb_cnt = 0;
 bool istakeoff = false;
 void init_pose_cb(const geometry_msgs::PoseStamped::ConstPtr& msg);

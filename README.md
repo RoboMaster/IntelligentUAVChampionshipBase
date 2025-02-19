@@ -1,4 +1,8 @@
-# __自主无人机竞速基本开发教程__  
+# __自主无人机竞速基本开发教程（复赛）__ 
+
+## Release Notes:
+>+ 20250219: 添加复赛版本，增加工厂巡检人物，增加侧风
+
 ## 1. 启动模拟器 
 参考 ***https://github.com/RoboMaster/IntelligentUAVChampionshipSimulator*** 配置好模拟器并启动
 
@@ -79,6 +83,8 @@
 `/airsim_node/drone_1/debug/pose_gt`  
 >+ gps数据(含带误差姿态)  
 `/airsim_node/drone_1/gps`  
+>+ 风速计  
+`airsim_node/drone_1/debug/wind`
 >+ 电机输入PWM信号(0:右前, 1:左后, 2:左前, 3:右后)  
 `/airsim_node/drone_1/debug/rotor_pwm`  
 >+ 起始位姿  
@@ -99,6 +105,9 @@
 `/airsim_node/drone_1/land`   
 >+ 重置   
 `/airsim_node/reset` 
+>+ 工厂巡检数据上报  
+   index:(0 第一个工厂； 1 第二个工厂)  value:(仪表数值)  
+   `/airsim_node/meter_report`
 ### 注意:   
 服务器仅开放规则手册中提及的话题,其余话题仅供调试程序使用。
 

@@ -82,7 +82,7 @@ add_service_files(
   Reset.srv
   SetLocalPosition.srv
   DebugSphere.srv
-  TriggerPort.srv
+  MeterReport.srv
 )
 
 generate_messages(
