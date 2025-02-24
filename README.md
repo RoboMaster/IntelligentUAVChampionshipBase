@@ -1,7 +1,7 @@
 # __自主无人机竞速基本开发教程（复赛）__ 
 
 ## Release Notes:
->+ 20250219: 添加复赛版本，增加工厂巡检人物，增加侧风
+>+ 20250219: 添加复赛版本，增加工厂巡检任务，增加侧风
 
 ## 1. 启动模拟器 
 参考 ***https://github.com/RoboMaster/IntelligentUAVChampionshipSimulator*** 配置好模拟器并启动
