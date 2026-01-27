@@ -1,5 +1,4 @@
-# __自主无人机竞速基本开发教程(初赛)__
->复赛内容已添加至分支 -RMUA2025-02
+# __自主无人机竞速基本开发教程__
 ## 1. 启动模拟器 
 参考 ***https://github.com/RoboMaster/IntelligentUAVChampionshipSimulator*** 配置好模拟器并启动
 
@@ -89,7 +88,7 @@
 ---- 
 >用于发送指令的主题
 >+ 速度控制  
-`/airsim_node/drone_1/vel_cmd_body_frame`
+`/airsim_node/drone_1/vel_cmd_body_frame`(该主题控制需要自己开发，所需msg文件已附加在模拟器文件夹中)
 >+ PWM控制(0:右前, 1:左后, 2:左前, 3:右后)  
 `/airsim_node/drone_1/rotor_pwm_cmd`
 ----
@@ -102,6 +101,7 @@
 `/airsim_node/reset` 
 ### 注意:   
 服务器仅开放规则手册中提及的话题,其余话题仅供调试程序使用。
+速度控制会提供基础飞控，加速度上限为8m/s2，但需要自己额外进行开发，所需要的msg文件已附加在模拟器文件夹中
 
 ## 系统相关参数
 > 无人机系统参数  
