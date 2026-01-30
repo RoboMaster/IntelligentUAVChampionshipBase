@@ -1,6 +1,6 @@
 # __自主无人机竞速基本开发教程__
 ## 1. 启动模拟器 
-参考 ***https://github.com/RoboMaster/IntelligentUAVChampionshipSimulator*** 配置好模拟器并启动
+参考 ***https://github.com/RoboMaster/IntelligentUAVChampionshipSimulator/tree/RMUA2026-01*** 配置好模拟器并启动
 
 ## 2. 安装Nvidia-Docker
 >确保已安装了 Nvidia 驱动
